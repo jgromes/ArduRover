@@ -30,5 +30,6 @@
 *.exe
 *.out
 *.app
-doc/slddrw/Thumbs.db
-doc/sldprt/Thumbs.db
+
+# Solidworks thumbs
+*.db
