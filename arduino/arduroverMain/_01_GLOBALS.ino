@@ -40,18 +40,23 @@ uni_float_byte_t accelerationZ;
 uni_float_byte_t pressure;
 uni_float_byte_t uvRadiation;
 uni_float_byte_t temperature;
+uni_int_byte_t currentLeft;
+uni_int_byte_t currentRight;
 
 // LoRa shield instance
 LoRa lora;
 
 // Packet instances
-Packet in, out, last;
-
-// VC0706 camera class instance
-Adafruit_VC0706 cam = Adafruit_VC0706(&Serial2);
+uint8_t cmd[4] = {0, 0, 0, 0};
+Packet in("01:23:45:67:89:AB:CD:EF", cmd, 4);
+Packet out("01:23:45:67:89:AB:CD:EF", cmd, 4);
+Packet last("01:23:45:67:89:AB:CD:EF", cmd, 4);
 
 // Servo instance
 Servo servo;
+
+// VC0706 camera class instance
+Adafruit_VC0706 cam = Adafruit_VC0706(&Serial2);
 
 // Error flags
 unsigned int errFlags = 0;
@@ -64,7 +69,7 @@ const char logFileName[] = "datalog.txt";
 
 // Function prototypes
 byte stopMotors(void);
-byte setMotorSpeed(byte motor, int pwm, byte dir);
+byte setMotorSpeed(byte motor, byte pwm, byte dir);
 byte takePicture(void);
 byte sendPicture(byte fileNumber);
 byte measureSensorValues(byte sen);

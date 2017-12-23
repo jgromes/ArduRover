@@ -59,7 +59,7 @@ byte measureSensorValues(byte sen) {
     // Update error flags
     setBit(&errFlags, ERR_SENSOR_BM1383GLV, state);
     if(state == 0) {
-      // Measurement was successful, update measurement variables
+      // Measurement was successful, update measurement variable
       pressure.number = sensorPress.pres;
     }
 
@@ -72,7 +72,7 @@ byte measureSensorValues(byte sen) {
     // Update error flags
     setBit(&errFlags, ERR_SENSOR_ML8511, state);
     if(state == 0) {
-      // Measurement was successful, update measurement variables
+      // Measurement was successful, update measurement variable
       uvRadiation.number = sensorUV.uvRad;
     }
 
@@ -85,9 +85,23 @@ byte measureSensorValues(byte sen) {
     // Update error flags
     setBit(&errFlags, ERR_SENSOR_BD1020HFV, state);
     if(state == 0) {
-      // Measurement was successful, update measurement variables
+      // Measurement was successful, update measurement variable
       temperature.number = sensorTmp.temp;
     }
+
+  // Left motor current measurement was requested
+  } else if((sen >> 6) & 1) {
+    // Measure current of left side motors and update the measurement variable
+    currentLeft.number = analogRead(MOTOR_LEFT_CS);
+    // Copy the operation result into response variable
+    response |= 0x00 << 6;
+
+  // Right motor current measurement was requested
+  } else if((sen >> 7) & 1) {
+    // Measure current of left side motors and update the measurement variable
+    currentRight.number = analogRead(MOTOR_RIGHT_CS);
+    // Copy the operation result into response variable
+    response |= 0x00 << 7;
   }
 
   // Return operation status

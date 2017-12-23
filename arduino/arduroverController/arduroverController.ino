@@ -14,6 +14,17 @@ void setup() {
 
 bool sent = true;
 void loop() {
+  if(Serial.available() > 0) {
+    sent = false;
+    while(Serial.available()) {
+      Serial.readBytes(cmd, 4);
+    }
+    for(int i = 0; i < 4; i++) {
+      out.data[i] = cmd[i];
+      Serial.println(cmd[i]);
+    }
+  }
+  
   uint8_t state;
   if(!sent) {
     state = lora.transmit(out);
@@ -34,17 +45,6 @@ void loop() {
     }
   } else if(state == ERR_CRC_MISMATCH) {
     
-  }
-}
-
-void serialEvent(void) {
-  sent = false;
-  while(Serial.available()) {
-    Serial.readBytes(cmd, 4);
-  }
-  for(int i = 0; i < 4; i++) {
-    out.data[i] = cmd[i];
-    //Serial.println(cmd[i]);
   }
 }
 

@@ -43,9 +43,6 @@ void setup() {
   uvRadiation.number = 0;
   temperature.number = 0;
 
-  // Set out packet destination address
-  out.setDestinationStr("01:23:45:67:89:AB:CD:EF");
-
   Serial.begin(9600);
 
   // Start LoRenz shield
@@ -58,7 +55,8 @@ void setup() {
   if(!SD.begin(SD_CS)) {
     // If the SD card was not found, set error bit
     errFlags |= 1 << ERR_SD_NOT_FOUND;
-    SD.initErrorHalt();
+    // Set camera error bit as well, since camera is dependent on SD card
+    errFlags |= 1 << ERR_CAMERA_NOT_FOUND;
     // SD module is a non-critical system, we can continue without it, but values won't be logged and camera won't work
   } else {
     // Start VC0706 camera if the SD was found
