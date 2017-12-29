@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TODO: GPS tab, Graphs tab -->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.atlas.myapplication.MainActivity">
+
+    <com.example.atlas.myapplication.SeekBarRotator
+        android:id="@+id/seekBarRotator1"
+        android:layout_width="42dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <SeekBar
+            android:id="@+id/motor_speed_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.example.atlas.myapplication.SeekBarRotator>
+
+    <com.example.atlas.myapplication.SeekBarRotator
+        android:id="@+id/seekBarRotator2"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <SeekBar
+            android:id="@+id/motor_speed_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.example.atlas.myapplication.SeekBarRotator>
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="480dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab_sensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_acceleration_x"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_acceleration_y"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_acceleration_z"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_temperature"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_pressure"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_current_left"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="10dp">
+
+                            <TextView
+                                android:id="@+id/text_acceleration_x"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_acceleration_y"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_acceleration_z"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_temperature"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_pressure"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_current_left"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_magnetic_induction_x"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_magnetic_induction_y"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_magnetic_induction_z"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_uv_radiation"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_ambient_light"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/label_current_right"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="10dp">
+
+                            <TextView
+                                android:id="@+id/text_magnetic_induction_x"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_magnetic_induction_y"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_magnetic_induction_z"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_uv_radiation"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_ambient_light"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:id="@+id/text_current_right"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="10dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/sensors_force"
+                            android:layout_width="240dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/sensors_force"/>
+
+                        <Button
+                            android:id="@+id/sensors_update"
+                            android:layout_width="240dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/sensors_update"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_camera_tilt"
+                            android:layout_width="61dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="7dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="right"
+                            android:text="@string/camera_tilt"/>
+
+                        <Button
+                            android:id="@+id/btn_camera_up"
+                            android:layout_width="65dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/arrow_up" />
+
+                        <Button
+                            android:id="@+id/btn_camera_down"
+                            android:layout_width="65dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/arrow_down" />
+
+                        <Button
+                            android:id="@+id/btn_camera_snap"
+                            android:layout_width="65dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/camera_snap"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="640px"
+                        android:layout_height="480px"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="5dp"
+                        android:contentDescription="@string/camera_screen"
+                        app:srcCompat="@android:color/holo_blue_dark" />
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_camera_pan"
+                            android:layout_width="61dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/camera_pan"/>
+
+                        <Button
+                            android:id="@+id/btn_camera_right"
+                            android:layout_width="65dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/arrow_right" />
+
+                        <Button
+                            android:id="@+id/btn_camera_left"
+                            android:layout_width="65dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/arrow_left" />
+
+                        <Button
+                            android:id="@+id/btn_camera_save"
+                            android:layout_width="65dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/camera_save"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_gps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_graphs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/tab_monitor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:id="@+id/monitor_output_scroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:fillViewport="true"
+                        android:scrollbars="vertical">
+
+                        <TextView
+                            android:id="@+id/monitor_output"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"/>
+
+                    </ScrollView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <EditText
+                            android:id="@+id/monitor_input"
+                            android:layout_width="320dp"
+                            android:layout_height="match_parent"
+                            android:ems="8"/>
+
+                        <Button
+                            android:id="@+id/monitor_send"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/monitor_send"/>
+
+                        <CheckBox
+                            android:id="@+id/checkBox_auto_scroll"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_auto_scroll"
+                            android:checked="true"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:id="@+id/tab_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_connection_type"
+                            android:textAlignment="viewStart" />
+
+                        <Spinner
+                            android:id="@+id/spinner_connection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:entries="@array/array_connections" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_baud_rate"
+                            android:textAlignment="viewStart" />
+
+                        <Spinner
+                            android:id="@+id/spinner_baudrate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:entries="@array/array_baud_rates" />
+
+                        <Button
+                            android:id="@+id/button_port_open"
+                            android:layout_width="96dp"
+                            android:layout_height="40dp"
+                            android:text="@string/port_open"/>
+
+                        <Button
+                            android:id="@+id/button_port_close"
+                            android:layout_width="96dp"
+                            android:layout_height="40dp"
+                            android:text="@string/port_close"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_line" />
+
+                        <Spinner
+                            android:id="@+id/spinner_line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:entries="@array/array_line_endings"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/label_port_status" />
+
+                        <TextView
+                            android:id="@+id/text_port_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_lora_bandwidth" />
+
+                        <Spinner
+                            android:id="@+id/spinner_lora_bandwidth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:entries="@array/array_lora_bandwidth"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_lora_spreading_factor" />
+
+                        <Spinner
+                            android:id="@+id/spinner_lora_spreading_factor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:entries="@array/array_lora_spreading_factor"/>
+
+                        <Button
+                            android:id="@+id/button_lora_reconfigure"
+                            android:layout_span="2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/lora_reconfigure"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_lora_coding_rate" />
+
+                        <Spinner
+                            android:id="@+id/spinner_lora_coding_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:entries="@array/array_lora_coding_rate"/>
+
+                        <Button
+                            android:id="@+id/button_request_errors"
+                            android:layout_span="2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/request_errors"/>
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/motors_stop"
+        app:layout_constraintBottom_toBottomOf="@+id/tabHost"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

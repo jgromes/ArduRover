@@ -1,0 +1,106 @@
+<resources>
+    <!-- General -->
+    <string name="app_name">ArduRover</string>
+
+    <!-- Motors -->
+    <string name="motors_stop">STOP</string>
+
+    <!-- Camera -->
+    <string name="arrow_left">◀</string>
+    <string name="arrow_right">▶</string>
+    <string name="arrow_up">▲</string>
+    <string name="arrow_down">▼</string>
+    <string name="camera_save">SAVE</string>
+    <string name="camera_snap">SNAP</string>
+    <string name="camera_screen">Camera Screen</string>
+    <string name="camera_tilt">130</string>
+    <string name="camera_pan">85</string>
+
+    <!-- Sensors -->
+    <string name="label_acceleration_x">Acceleration X [g]:</string>
+    <string name="label_acceleration_y">Acceleration Y [g]:</string>
+    <string name="label_acceleration_z">Acceleration Z [g]:</string>
+    <string name="label_temperature">Temperature [°C]:</string>
+    <string name="label_pressure">Pressure [hPa]:</string>
+    <string name="label_current_left">Left side current [A]:</string>
+
+    <string name="label_magnetic_induction_x">Magnetic induction X [uT]:</string>
+    <string name="label_magnetic_induction_y">Magnetic induction Y [uT]:</string>
+    <string name="label_magnetic_induction_z">Magnetic induction Z [uT]:</string>
+    <string name="label_uv_radiation">UV intensity [mW/m^2]:</string>
+    <string name="label_ambient_light">Ambient light [lux]:</string>
+    <string name="label_current_right">Right side current [A]:</string>
+
+    <string name="sensors_force">Force New Measurement</string>
+    <string name="sensors_update">Update Values</string>
+
+    <!-- Monitor -->
+    <string name="monitor_send">SEND</string>
+
+    <!-- Settings -->
+    <string name="label_baud_rate">Baud Rate:</string>
+    <string-array name="array_baud_rates">
+        <item>300</item>
+        <item>1200</item>
+        <item>2400</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>576600</item>
+        <item>744880</item>
+        <item>115200</item>
+        <item>230400</item>
+        <item>250000</item>
+    </string-array>
+    <string name="port_open">OPEN</string>
+    <string name="port_close">CLOSE</string>
+    <string name="label_line">Line Ending:</string>
+    <string-array name="array_line_endings">
+        <item>None</item>
+        <item>New Line</item>
+        <item>Carriage Return</item>
+        <item>Both</item>
+    </string-array>
+    <string name="label_auto_scroll">Autoscroll</string>
+    <string name="label_port_status">Port Status:</string>
+    <string name="port_status_closed">Closed</string>
+    <string name="port_status_open">Open</string>
+    <string name="label_connection_type">Connection type:</string>
+    <string-array name="array_connections">
+        <item>USB port</item>
+        <item>Bluetooth</item>
+    </string-array>
+    <string name="label_lora_bandwidth">Bandwidth:</string>
+    <string-array name="array_lora_bandwidth">
+        <item>7.80 kHz</item>
+        <item>10.40 kHz</item>
+        <item>15.60 kHz</item>
+        <item>20.80 kHz</item>
+        <item>31.25 kHz</item>
+        <item>41.70 kHz</item>
+        <item>62.50 kHz</item>
+        <item>125.00 kHz</item>
+        <item>250.00 kHz</item>
+        <item>500.00 kHz</item>
+    </string-array>
+    <string name="label_lora_spreading_factor">Spreading Factor:</string>
+    <string-array name="array_lora_spreading_factor">
+        <item>6 (64 ch/bit)</item>
+        <item>7 (128 ch/bit)</item>
+        <item>8 (256 ch/bit)</item>
+        <item>9 (512 ch/bit)</item>
+        <item>10 (1024 ch/bit)</item>
+        <item>11 (2048 ch/bit)</item>
+        <item>12 (4096 ch/bit)</item>
+    </string-array>
+    <string name="label_lora_coding_rate">Coding Rate:</string>
+    <string-array name="array_lora_coding_rate">
+        <item>4/5 (1.25 size)</item>
+        <item>4/6 (1.50 size)</item>
+        <item>4/7 (1.75 size)</item>
+        <item>4/8 (2.00 size)</item>
+    </string-array>
+    <string name="lora_reconfigure">Reconfigure LoRa</string>
+    <string name="request_errors">Get Active Errors</string>
+</resources>
