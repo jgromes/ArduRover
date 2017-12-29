@@ -17,7 +17,6 @@ Packet in("01:23:45:67:89:AB:CD:EF", cmdIn, 4);
 SoftwareSerial port(4, 5);
 
 void setup() {
-  //Serial.begin(9600);
   // Begin communication via Bluetooth
   port.begin(9600);
   // Begin communication via LoRa
@@ -39,12 +38,6 @@ void loop() {
     for(int i = 0; i < 4; i++) {
       out.data[i] = cmdOut[i];
     }
-    /*Serial.print("command:\t");
-    for(int i = 0; i < 4; i++) {
-      Serial.print(cmdOut[i], HEX);
-      Serial.print('\t');
-    }
-    Serial.println();*/
   }
 
   // Variable to store LoRa communication state
@@ -73,18 +66,5 @@ void loop() {
     if(cmdIn[0] == 0xA0) {
       lora.transmit(out);
     }
-    
-    /*Serial.print("response:\t");
-    for(int i = 0; i < 4; i++) {
-      Serial.print(cmdIn[i], HEX);
-      Serial.print('\t');
-    }
-    Serial.println();*/
-    
-  } else if(state == ERR_CRC_MISMATCH) {
-    //Serial.println("CRC error");
-  } else if(state == ERR_RX_TIMEOUT) {
-    //Serial.println("RX timeout");
   }
 }
-
